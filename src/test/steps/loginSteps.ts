@@ -5,7 +5,7 @@ import { chromium, Page, Browser, expect } from "@playwright/test";
 let browser: Browser;
 let page: Page;
 
-Given('User navigates to the application', async function () {
+Given('User navigates to the application',{timeout: 9000}, async function () {
      browser = await chromium.launch({ headless:false })
      page = await browser.newPage();
      await page.goto("https://bookcart.azurewebsites.net/");
